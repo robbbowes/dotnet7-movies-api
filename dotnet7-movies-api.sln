@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.Api", "Movies.Api\Movies.Api.csproj", "{C02A0C8C-D530-4B5D-B6E7-52146C637789}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Api", "Movies.Api\Movies.Api.csproj", "{C02A0C8C-D530-4B5D-B6E7-52146C637789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.Application", "Movies.Application\Movies.Application.csproj", "{0338B154-6477-4488-88FB-2E0EF50F64AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Application", "Movies.Application\Movies.Application.csproj", "{0338B154-6477-4488-88FB-2E0EF50F64AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies.Contracts", "Movies.Contracts\Movies.Contracts.csproj", "{1961BD3F-0E88-4C56-854D-EF34B9D04D9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Movies.Contracts", "Movies.Contracts\Movies.Contracts.csproj", "{1961BD3F-0E88-4C56-854D-EF34B9D04D9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Api", "Identity.Api\Identity.Api.csproj", "{5F85E2A9-15E5-431F-9125-3AD45CF70330}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{1961BD3F-0E88-4C56-854D-EF34B9D04D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1961BD3F-0E88-4C56-854D-EF34B9D04D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1961BD3F-0E88-4C56-854D-EF34B9D04D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F85E2A9-15E5-431F-9125-3AD45CF70330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F85E2A9-15E5-431F-9125-3AD45CF70330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F85E2A9-15E5-431F-9125-3AD45CF70330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F85E2A9-15E5-431F-9125-3AD45CF70330}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
