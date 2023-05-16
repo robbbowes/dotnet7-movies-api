@@ -1,8 +1,6 @@
 ﻿using FluentValidation;
 using Movies.Application.Models;
 using Movies.Application.Repositories;
-using Movies.Application.Services;
-using System.Runtime.CompilerServices;
 
 namespace Movies.Application.Validators;
 
@@ -30,12 +28,11 @@ public class MovieValidator : AbstractValidator<Movie>
         RuleFor(x => x.Slug)
             .MustAsync(ValidateSlug)
             .WithMessage("This movie already exists in the system.");
-
     }
 
     private async Task<bool> ValidateSlug(Movie movie, string slug, CancellationToken token = default)
     {
-        var existingMovie = await _movieRepository.GetBySlugAsync(slug);
+        var existingMovie = await _movieRepository.GetBySlugAsync(slug, token);
 
         if (existingMovie is not null)
         {
