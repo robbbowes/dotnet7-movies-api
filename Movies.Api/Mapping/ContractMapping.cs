@@ -42,9 +42,27 @@ public static class ContractMapping
         };
     }
 
+    public static MovieRatingResponse MapToResponse(this MovieRating movieRating)
+    {
+        return new MovieRatingResponse
+        {
+            Rating = movieRating.Rating,
+            Slug = movieRating.Slug,
+            MovieId = movieRating.MovieId
+        };
+    }
+
     public static MoviesResponse MapToResponse(this IEnumerable<Movie> movies)
     {
         return new MoviesResponse
+        {
+            Items = movies.Select(MapToResponse)
+        };
+    }
+
+    public static MovieRatingsResponse MapToResponse(this IEnumerable<MovieRating> movies)
+    {
+        return new MovieRatingsResponse
         {
             Items = movies.Select(MapToResponse)
         };

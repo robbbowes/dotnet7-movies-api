@@ -56,10 +56,10 @@ public class MoviesController : ControllerBase
 
     [Authorize(AuthConstants.TrustedMemberPolicyName)]
     [HttpPut(ApiEndpoints.Movies.Update)]
-    public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] UpdateMovieRequest request, CancellationToken token)
+    public async Task<IActionResult> Update([FromRoute] Guid movieId, [FromBody] UpdateMovieRequest request, CancellationToken token)
     {
         var userId = HttpContext.GetUserId();
-        var movie = request.MapToMovie(id);
+        var movie = request.MapToMovie(movieId);
         var updatedMovie = await _movieService.UpdateAsync(movie, userId, token);
         if (updatedMovie is null)
         {
@@ -72,9 +72,9 @@ public class MoviesController : ControllerBase
 
     [Authorize(AuthConstants.AdminUserPolicyName)]
     [HttpDelete(ApiEndpoints.Movies.Delete)]
-    public async Task<IActionResult> Delete([FromRoute] Guid id, CancellationToken token)
+    public async Task<IActionResult> Delete([FromRoute] Guid movieId, CancellationToken token)
     {
-        var deleted = await _movieService.DeleteByIdAsync(id, token);
+        var deleted = await _movieService.DeleteByIdAsync(movieId, token);
         if (!deleted)
         {
             return NotFound();
